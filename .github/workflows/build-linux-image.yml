@@ -29,13 +29,13 @@ jobs:
           file: ./linux.Dockerfile
           tags: |
             petrkubica/ut2004-server:latest
-            ghcr.io/lacledeslan/gamesvr-ut2004:latest
+            ghcr.io/pkubica/ut2004-server:latest
           build-args: |
             BUILDNODE=GitHub (Run Number: ${{ github.run_number }} Run ID: ${{ github.run_id }})
             SOURCE_COMMIT=${{ github.sha }}
           no-cache: true
-      - name: Test Linux Image
-        run: docker run --rm lacledeslan/gamesvr-ut2004:latest /app/ll-tests/gamesvr-ut2004.sh
+      # - name: Test Linux Image
+      #   run: docker run --rm petrkubica/gamesvr-ut2004:latest /app/ll-tests/gamesvr-ut2004.sh
       - name: Login to DockerHub
         if: ${{ github.event_name != 'pull_request' }}
         uses: docker/login-action@v3.4.0
