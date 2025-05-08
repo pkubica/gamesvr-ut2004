@@ -17,6 +17,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: lacledeslan/gamesvr-ut2004
+          repository: petrkubica/ut2004-server
           short-description: "Unreal Tournament 2004 Dedicated Server in Docker"
           readme-filepath: ./readme.md
